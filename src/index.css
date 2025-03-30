@@ -55,10 +55,31 @@
     scroll-behavior: smooth;
   }
 
+  @screen md {
+    body {
+      width: calc(100vw - 5px);
+      overflow-x: hidden;
+    }
+  }
+
   * {
     @apply border-border;
   }
   
+}
+
+@media (max-width: 640px) {
+  .mobile-width-160 {
+    width: 160%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .mobile-width-140 {
+    width: 140%;
+    max-width: none;
+  }
 }
 
 @layer utilities {
@@ -107,6 +128,39 @@
   .image-loader {
     @apply bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 bg-size-200 animate-[shimmer_1.5s_infinite];
   }
+
+  .laser-dot {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #ea384c;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 0 5px #ea384c, 0 0 10px #ea384c, 0 0 15px rgba(234, 56, 76, 0.5);
+    transform: translate(-50%, -50%);
+    mix-blend-mode: screen;
+    filter: brightness(1.5);
+  }
+  
+  .laser-dot {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #ea384c;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 0 5px #ea384c, 0 0 10px #ea384c, 0 0 15px rgba(234, 56, 76, 0.5);
+    transform: translate(-50%, -50%);
+    mix-blend-mode: screen;
+    filter: brightness(1.5);
+  }
+
+  .no-custom-cursor {
+    cursor: pointer;
+  }
+  
 }
 
 /* Scroll animations */

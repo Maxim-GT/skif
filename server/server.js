@@ -21,7 +21,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// POST-роут для отправки email с проверкой капчи
+// POST-роут для отправки email с проверкой капчи и отправкой подтверждающего письма клиенту
 app.post('/send-email', async (req, res) => {
   const { name, phone, email, message, captcha } = req.body;
 
@@ -45,23 +45,21 @@ app.post('/send-email', async (req, res) => {
     });
     const verifyData = await verifyResponse.json();
 
-    // Логируем успешную валидацию капчи, если нужно
     if (verifyData.success) {
       console.log('hCaptcha прошла успешную валидацию');
     } else {
       console.error('Ошибка при верификации капчи:', verifyData);
       return res.status(400).json({ error: 'Ошибка проверки капчи' });
     }
-
   } catch (error) {
     console.error('Ошибка при верификации капчи:', error);
     return res.status(500).json({ error: 'Ошибка при верификации капчи' });
   }
 
-  // Если капча прошла проверку, продолжаем отправку письма
-  const mailOptions = {
-    from: 'glukhov_maxim@mail.ru',
-    to: process.env.MAIL_RECEIVER, // Получатель из .env
+  // Формируем письмо для получателя (например, на MAIL_RECEIVER)
+  const mainMailOptions = {
+    from: process.env.MAIL_USER, // отправитель (указанный в .env)
+    to: process.env.MAIL_RECEIVER, // получатель из .env
     subject: `Новая заявка с сайта от ${name}`,
     text: `Имя: ${name}\nТелефон: ${phone}\nEmail: ${email}\nСообщение: ${message}`,
     html: `<h2>Новая заявка с сайта</h2>
@@ -72,8 +70,22 @@ app.post('/send-email', async (req, res) => {
   };
 
   try {
-    const info = await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mainMailOptions);
     console.log('Письмо отправлено:', info.response);
+
+    // Формируем подтверждающее письмо для клиента
+    const clientMailOptions = {
+      from: process.env.MAIL_USER, // используем тот же адрес отправителя
+      to: email, // email клиента, введённый в форме
+      subject: 'Спасибо за вашу заявку!',
+      text: 'Благодарим за оформление заявки. Мы свяжемся с вами в ближайшее время.',
+      html: `<h2>Спасибо за вашу заявку!</h2>
+             <p>Мы свяжемся с вами в ближайшее время.</p>`
+    };
+
+    const clientInfo = await transporter.sendMail(clientMailOptions);
+    console.log('Письмо подтверждения клиенту отправлено:', clientInfo.response);
+
     res.status(200).json({ success: true });
   } catch (error) {
     console.error('Ошибка при отправке email:', error);

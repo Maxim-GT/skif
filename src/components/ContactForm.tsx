@@ -7,6 +7,7 @@ import { toast } from 'sonner';
 import { sendEmail, EmailFormData } from '@/utils/sendEmail';
 import YandexMapWidget from './YandexMapWidget';
 import HCaptcha from "@hcaptcha/react-hcaptcha";
+import { Link } from "react-router-dom";
 
 const ContactForm = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -35,7 +36,6 @@ const ContactForm = () => {
     };
     
     window.addEventListener('scroll', revealOnScroll);
-    // Запускаем один раз на загрузке страницы
     revealOnScroll();
     
     return () => {
@@ -46,7 +46,6 @@ const ContactForm = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
 
-    // Если поле "phone", производим очистку ввода
     if (name === 'phone') {
       let sanitizedValue = value.replace(/[^\d+]/g, '');
       if (sanitizedValue.startsWith('8')) {
@@ -61,7 +60,6 @@ const ContactForm = () => {
     }
   };
 
-  // Обработчик успешного прохождения капчи
   const handleCaptchaVerify = (token: string) => {
     setCaptchaToken(token);
   };
@@ -70,7 +68,6 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Проверка прохождения капчи
     if (!captchaToken) {
       toast.error("Пожалуйста, подтвердите, что вы не робот.");
       setIsSubmitting(false);
@@ -79,8 +76,6 @@ const ContactForm = () => {
 
     try {
       const submissionData = { ...formData, captcha: captchaToken };
-
-      // Отправка данных через SMTP
       console.log('Отправка данных формы:', submissionData);
       const success = await sendEmail(submissionData);
       
@@ -88,7 +83,6 @@ const ContactForm = () => {
         toast.success('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
         setFormData({ name: '', phone: '', email: '', message: '' });
         setCaptchaToken(null);
-        // Сброс капчи, если ref доступен
         if (hcaptchaRef.current) {
           hcaptchaRef.current.resetCaptcha();
         }
@@ -172,8 +166,7 @@ const ContactForm = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Форма заявки */}
-          <div className="bg-white p-8 rounded-lg shadow-lg h-full flex flex-col">
+          <div className="bg-white p-8 pb-3 rounded-lg shadow-lg h-full flex flex-col">
             <h3 className="text-2xl font-semibold mb-6">Оставить заявку</h3>
             <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
               <div className="space-y-6 flex-1">
@@ -239,7 +232,6 @@ const ContactForm = () => {
                 </div>
               </div>
 
-              {/* hCaptcha */}
               <div className="mt-4 flex flex-col items-center">
                 <HCaptcha
                   sitekey="fe98a46c-645a-4448-821e-e9a4796e6a5c"
@@ -268,13 +260,18 @@ const ContactForm = () => {
                   </>
                 )}
               </Button>
+              {/* Маленькая надпись под кнопкой */}
+              <p className="mt-2 text-xs text-left text-skif-charcoal/70">
+                Нажимая кнопку «Отправить заявку», вы соглашаетесь с 
+                <Link to="/privacy-policy" className="text-skif-gold hover:underline"> политикой конфиденциальности
+                </Link>
+              </p>
             </form>
           </div>
           
-          {/* Контактная информация */}
-          <div className="bg-white p-8 rounded-lg shadow-lg h-full flex flex-col">
+          <div className="bg-white lg:pb-[36px] p-8 rounded-lg shadow-lg h-full flex flex-col">
             <h3 className="text-2xl font-semibold mb-6">Контактная информация</h3>
-            <div className="space-y-6 flex-1 flex flex-col justify-center mb-8 lg:justify-around lg:pt-2 lg:pb-3 pt-2 pb-4 md:pt-10 md:pb-15">
+            <div className="space-y-6 flex-1 flex flex-col justify-center lg:justify-around lg:pt-2 lg:pb-3 lg:mb-8 pt-2 pb-4 md:pt-10 md:pb-15">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-center">
                   <div className="p-3 bg-skif-cream rounded-full mr-4">
@@ -290,7 +287,7 @@ const ContactForm = () => {
 
             <div className="mt-auto">
               <a href="https://m.vk.com/club220666580" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-                <Button variant="outline" className="w-full border-skif-gold text-skif-gold hover:bg-skif-gold hover:text-white transition-all duration-300">
+                <Button variant="outline" className="w-full h-12 border-skif-gold text-skif-gold hover:bg-skif-gold hover:text-white transition-all duration-300">
                   Связаться через VK
                 </Button>
               </a>
@@ -298,7 +295,6 @@ const ContactForm = () => {
           </div>
         </div>
         
-        {/* Карта */}
         <div className="bg-white p-4 rounded-lg shadow-lg h-[400px] overflow-hidden">
           <YandexMapWidget />
         </div>

@@ -110,10 +110,15 @@ const ServicesSection = () => {
           <div className="bg-skif-gold/10 p-8 md:p-12 rounded-lg border border-skif-gold/20">
             <h4 className="text-xl font-semibold mb-4">Абонементы на тренировки</h4>
             <p className="text-skif-charcoal/80 mb-8 max-w-3xl mx-auto">
-              Приобретите абонемент на 5 или 10 тренировок и получите существенную скидку.
+              Приобретите абонемент на 3, 5 или 10 тренировок и получите существенную скидку.
               Абонементы действуют в течение 3 месяцев с момента приобретения.
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center">
+              <div className="bg-white p-6 rounded-lg shadow-md flex flex-col justify-between">
+                <h5 className="text-lg font-semibold mb-2 mt-8">3 тренировки</h5>
+                <p className="text-skif-gold text-2xl font-bold mb-4">3000 ₽</p>
+                <p className="text-sm text-skif-charcoal/60">Экономия 500 ₽</p>
+              </div>
               <div className="bg-white p-6 rounded-lg shadow-md flex flex-col justify-between">
                 <h5 className="text-lg font-semibold mb-2 mt-8">5 тренировок</h5>
                 <p className="text-skif-gold text-2xl font-bold mb-4">6000 ₽</p>

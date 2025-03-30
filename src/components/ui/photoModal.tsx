@@ -28,8 +28,8 @@ const Modal = ({ selectedImage, onClose }) => {
       onAfterOpen={handleAfterOpen}
       onAfterClose={handleAfterClose}
       closeTimeoutMS={400}
-      className="fixed inset-0 z-50 flex items-center justify-center outline-none px-4 md:px-8"
-      overlayClassName={`fixed inset-0 bg-black/90 transition-opacity duration-400 ease-out ${
+      className="fixed inset-0 flex items-center justify-center outline-none px-4 md:px-8"
+      overlayClassName={`fixed inset-0 bg-black/90 transition-opacity duration-400 ease-out z-[60] ${
         isClosing ? 'opacity-0' : 'opacity-100'
       }`}
       shouldCloseOnOverlayClick={true}

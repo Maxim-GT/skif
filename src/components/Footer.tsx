@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { PhoneCall, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -54,10 +55,16 @@ const Footer = () => {
                 <a href="#services" className="text-white/70 hover:text-skif-gold transition-colors">Услуги</a>
               </li>
               <li>
+                <a href="#weapons" className="text-white/70 hover:text-skif-gold transition-colors">Оружие</a>
+              </li>
+              <li>
                 <a href="#gallery" className="text-white/70 hover:text-skif-gold transition-colors">Галерея</a>
               </li>
               <li>
                 <a href="#contact" className="text-white/70 hover:text-skif-gold transition-colors">Контакты</a>
+              </li>
+              <li>
+                <Link to="/privacy-policy" className="text-white/70 hover:text-skif-gold transition-colors">Политика конфиденциальности</Link>
               </li>
             </ul>
           </div>

@@ -3,7 +3,7 @@ import { Link } from 'react-scroll';
 
 const CertificateBanner = () => {
   return (
-    <section className="py-[10px] sm:py-[30px] bg-#bea04f reveal w-full overflow-x-hidden" style={{ backgroundColor: "#bea04f" }}>
+    <section className="py-[10px] sm:py-[30px] w-full overflow-x-hidden reveal" style={{ backgroundColor: "#bea04f" }}>
       <Link 
         to="contact"
         spy={true}
@@ -15,7 +15,7 @@ const CertificateBanner = () => {
         <img 
           src="./skif_sert.png" 
           alt="Подарочные сертификаты с доставкой" 
-          className="w-full sm:w-auto "
+          className="w-full mobile-width-160"
         />
       </Link>
     </section>

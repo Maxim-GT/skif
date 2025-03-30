@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ReactModal from "react-modal";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 ReactModal.setAppElement("#root");
 
@@ -19,7 +20,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

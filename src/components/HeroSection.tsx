@@ -1,13 +1,30 @@
-
+// src/components/HeroSection.tsx
 import React, { useEffect, useState } from 'react';
 import { ArrowDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import CustomCursor from './CustomCursor';
 
 const HeroSection = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+const [isLoaded, setIsLoaded] = useState(false);
+const [isShimmering, setIsShimmering] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
+    
+    // Запуск shimmer-эффекта после первоначальной загрузки
+    const timer = setTimeout(() => {
+      setIsShimmering(true);
+      
+      // Перезапуск эффекта каждые 4 секунды
+      const interval = setInterval(() => {
+        setIsShimmering(false);
+        setTimeout(() => setIsShimmering(true), 100);
+      }, 4000);
+      
+      return () => clearInterval(interval);
+    }, 1500);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   const scrollToAbout = () => {
@@ -19,16 +36,20 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-skif-black"
+      id="hero-section"
+      className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-skif-black shooting-area"
       style={{
         backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url("https://images.unsplash.com/photo-1669729828193-147aad39fa63?q=80&w=1920&auto=format&fit=crop")',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
     >
-      {/* Decorative Mongolian pattern border */}
+      {/* Декоративная рамка с узором */}
       <div className="absolute inset-0 border-[10px] border-transparent mongolian-pattern-border opacity-30"></div>
       
+      {/* Кастомный курсор */}
+      <CustomCursor />
+
       <div className="container mx-auto px-4 text-center z-10">
         <div 
           className={`transition-all duration-1000 ease-out ${
@@ -36,7 +57,11 @@ const HeroSection = () => {
           }`}
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
-            Спортивный клуб <span className="text-skif-gold">СКИФ</span>
+            Стрелковый клуб{" "}
+            <span className="relative shimmer-container inline-block">
+              <span className="gold-text-gradient text-mask">СКИФ</span>
+              <span className={`shimmer-effect ${isShimmering ? 'shimmer-active' : ''}`}></span>
+            </span>
           </h1>
           
           <p 
@@ -63,11 +88,11 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Scroll down indicator */}
+      {/* Индикатор прокрутки вниз */}
       <div 
         className={`absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer animate-bounce transition-all duration-1000 delay-700 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
+        } no-custom-cursor`}
         onClick={scrollToAbout}
       >
         <ArrowDown className="text-white h-10 w-10" />

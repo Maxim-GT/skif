@@ -15,7 +15,7 @@ const CertificateBanner = () => {
         <img 
           src="./skif_ssk.png" 
           alt="Скидка за вступление в клуб" 
-          className="w-full h-auto"
+          className="w-full h-auto mobile-width-140"
         />
       </Link>
     </section>
