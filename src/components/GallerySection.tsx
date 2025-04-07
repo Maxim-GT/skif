@@ -39,14 +39,14 @@ const GallerySection = () => {
   }, []);
 
   const images = [
-    './public/5.webp',
-    './public/2.webp',
-    './public/3.webp',
-    './public/4.webp',
-    './public/1.webp',
-    './public/6.webp',
-    './public/7.webp',
-    './public/8.webp'
+    '/5.webp',
+    '/2.webp',
+    '/3.webp',
+    '/4.webp',
+    '/1.webp',
+    '/6.webp',
+    '/7.webp',
+    '/8.webp'
   ];
 
   return (
