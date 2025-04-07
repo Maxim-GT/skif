@@ -88,7 +88,7 @@ const HeroSection = () => {
         <div 
           className={`flex flex-col items-center transition-all duration-1000 ease-out gap-3 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
-          <img src="./logo3.webp" alt="Логтип Скриф" className="w-[10rem] lg:w-[12rem] sm:mb-5 mb-0"/>
+          <img src="./logo2.webp" alt="Логтип Скриф" className="w-[10rem] lg:w-[12rem] sm:mb-5 mb-0"/>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
             Спортивный клуб{" "}
             <span className="relative shimmer-container inline-block">

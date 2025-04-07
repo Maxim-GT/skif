@@ -135,7 +135,7 @@ const ContactForm = () => {
     {
       icon: (
         <a href="https://t.me/SKifHakasia" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-          <img src="./public/telegram-icon2.svg" alt="Telegram" className="h-5 w-5 transition-transform transform hover:scale-110" />
+          <img src="./telegram-icon2.svg" alt="Telegram" className="h-5 w-5 transition-transform transform hover:scale-110" />
         </a>
       ),
       title: 'Telegram',
