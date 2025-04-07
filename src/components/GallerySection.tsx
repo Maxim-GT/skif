@@ -52,10 +52,10 @@ const GallerySection = () => {
   return (
     <section id="gallery" ref={sectionRef} className="section-spacing bg-skif-black reveal">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center mb-16">
+        <div className="flex flex-col items-center mb-10 lg:mb-16">
           <div className="w-20 h-1 bg-skif-gold mb-6"></div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-white">Галерея</h2>
-          <p className="text-lg text-white/80 max-w-3xl text-center">
+          <p className="text-base lg:text-lg text-white/80 max-w-3xl text-center">
             Погрузитесь в атмосферу нашего стрелкового клуба через фотографии наших объектов, 
             мероприятий и тренировок
           </p>
@@ -90,6 +90,7 @@ const GallerySection = () => {
           onClose={() => setSelectedImage(null)}
         />
       )}
+    <div className="absolute inset-0 mongolian-pattern-border opacity-10 z-0 pointer-events-none"></div>
     </section>
   );
 };

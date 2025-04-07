@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 
-const CertificateBanner = () => {
+const DiscountBanner = () => {
   return (
     <section className="py-[10px] sm:py-[30px] bg-#bea04f reveal w-full overflow-x-hidden" style={{ backgroundColor: "#bea04f" }}>
       <Link 
@@ -22,4 +22,4 @@ const CertificateBanner = () => {
   );
 };
 
-export default CertificateBanner;
+export default DiscountBanner;

@@ -10,6 +10,12 @@ import GallerySection from '@/components/GallerySection';
 import FAQSection from '@/components/Faq';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ui/ScrollToTop';
+import SocialProofNotification from '@/components/ui/socialProofNotification';
+import VideoPreview from '@/components/VideoPreview';
+import DiscountBanner from '@/components/DiscountBanner';
+import FloatingSocialButton from '@/components/ui/FloatingSocialButton';
+import DelayedContactModal from '@/components/DelayedContactModal';
 
 const Index = () => {
   // Scroll animation handler
@@ -51,6 +57,8 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <DiscountBanner/>
+      <VideoPreview />
       <ServicesSection />
       <CertificateBanner />
       <WeaponsSection />
@@ -58,6 +66,10 @@ const Index = () => {
       <FAQSection />
       <ContactForm />
       <Footer />
+      <ScrollToTop />
+      <SocialProofNotification />
+      <FloatingSocialButton />
+      <DelayedContactModal />
     </div>
   );
 };

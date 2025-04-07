@@ -67,7 +67,7 @@ const FAQSection = () => {
         <div className="flex flex-col items-center mb-8">
           <div className="w-20 h-1 bg-skif-gold mb-6"></div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Часто задаваемые вопросы</h2>
-          <p className="text-lg text-skif-charcoal/80 max-w-3xl text-center">
+          <p className="text-base lg:text-lg text-skif-charcoal/80 max-w-3xl text-center">
             Ответы на самые распространенные вопросы о нашем стрелковом клубе
           </p>
         </div>

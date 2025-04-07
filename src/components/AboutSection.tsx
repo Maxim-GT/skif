@@ -122,7 +122,7 @@ const AboutSection = () => {
         <div className="flex flex-col items-center mb-16">
           <div className="w-20 h-1 bg-skif-gold mb-6"></div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">О стрелковом клубе СКИФ</h2>
-          <p className="text-lg text-skif-charcoal/80 max-w-3xl text-center">
+          <p className="text-base lg:text-lg text-skif-charcoal/80 max-w-3xl text-center">
             Стрелковый клуб СКИФ — это современный центр для обучения и практики стрелкового искусства в Абакане,
             где безопасность и профессионализм являются нашими главными приоритетами.
           </p>
@@ -130,7 +130,7 @@ const AboutSection = () => {
 
         {renderFeatures()}            
         
-        <div className="mt-20 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div className="mt-14 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
           <div className="flex flex-col lg:flex-row">
             <div 
               className="w-full lg:w-1/2 h-64 lg:h-auto bg-contain bg-top bg-no-repeat bg-white"

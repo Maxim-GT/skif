@@ -5,6 +5,7 @@ export interface EmailFormData {
   phone: string;
   email: string;
   message: string;
+  captcha?: string;
 }
 
 export const sendEmail = async (formData: EmailFormData): Promise<boolean> => {

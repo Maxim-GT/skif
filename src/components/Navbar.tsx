@@ -79,30 +79,37 @@ const Navbar = ({ initialColor = 'white' }) => {
         {/* Mobile Navigation */}
         <div 
           className={`md:hidden transition-all duration-300 ${
-            isMenuOpen ? 'max-h-[400px] opacity-100 mt-4' : 'max-h-0 opacity-0'
+            isMenuOpen ? 'max-h-[400px] opacity-100 mt-4' : 'max-h-0 opacity-0 pointer-events-none'
           }`}
-        >
+          >
           <div className="flex flex-col space-y-4 pt-4 pb-6">
-            {['О нас', 'Услуги', 'Оружие', 'Галерея', 'Контакты'].map((text, index) => (
+            {[
+              { href: "#about", label: "О нас" },
+              { href: "#services", label: "Услуги" },
+              { href: "#weapons", label: "Оружие" },
+              { href: "#gallery", label: "Галерея" },
+              { href: "#contact", label: "Контакты" }
+            ].map(({ href, label }, index) => (
               <a 
                 key={index} 
-                href={`/#${text.toLowerCase()}`} 
+                href={href} 
                 className="px-4 py-2 text-skif-black hover:text-skif-gold transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {text}
+                {label}
               </a>
             ))}
-            <Button className="bg-skif-gold hover:bg-skif-darkGold text-white rounded-md">
-              <a 
-                href="https://m.vk.com/club220666580" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                onClick={() => setIsMenuOpen(false)}
-              >
+            <a 
+              href="https://m.vk.com/club220666580" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={() => setIsMenuOpen(false)}
+              className="px-4"
+            >
+              <Button className="bg-skif-gold hover:bg-skif-darkGold text-white rounded-md w-full">
                 VK Группа
-              </a>
-            </Button>
+              </Button>
+            </a>
           </div>
         </div>
       </div>
