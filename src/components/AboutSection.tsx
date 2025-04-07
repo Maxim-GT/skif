@@ -134,7 +134,7 @@ const AboutSection = () => {
           <div className="flex flex-col lg:flex-row">
             <div 
               className="w-full lg:w-1/2 h-64 lg:h-auto bg-contain bg-top bg-no-repeat bg-white"
-              style={{ backgroundImage: 'url("/public/logo2.webp")' }}
+              style={{ backgroundImage: 'url("./logo2.webp")' }}
             ></div>
             <div className="bg-skif-black w-full lg:w-1/2 p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">Наша философия</h3>
