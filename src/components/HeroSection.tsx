@@ -127,10 +127,10 @@ const HeroSection = () => {
       
       {/* Индикатор прокрутки вниз */}
       <div 
-        className={`flex absolute transform-translate-x-1/2 cursor-pointer animate-bounce transition-all duration-2500 delay-1000 bottom-[3rem] lg:bottom-[2rem] ${imageLoaded ? 'opacity-100' : 'opacity-0'} no-custom-cursor`}
+        className={`flex absolute transform-translate-x-1/2 cursor-pointer animate-bounce transition-all duration-2500 delay-600 bottom-[1rem] lg:bottom-[2rem] ${imageLoaded ? 'opacity-100' : 'opacity-0'} no-custom-cursor`}
         onClick={scrollToAbout}
       >
-        <ArrowDown className="text-white h-36 lg:h-24 w-10" />
+        <ArrowDown className="text-white h-[3rem] lg:h-24 w-10" />
       </div>
     </section>
   );

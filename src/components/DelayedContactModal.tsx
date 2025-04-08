@@ -46,7 +46,7 @@ const DelayedContactModal = () => {
         setIsOpen(true);
         // Помечаем в sessionStorage, что модальное окно было показано
         sessionStorage.setItem(MODAL_SHOWN_KEY, 'true');
-      }, 5 * 1000);
+      }, 2 * 60 * 1000);
       
       return () => clearTimeout(timer);
     }

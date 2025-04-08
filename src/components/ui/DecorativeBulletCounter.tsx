@@ -18,7 +18,7 @@ const DecorativeBulletCounter: React.FC<DecorativeBulletCounterProps> = ({
   const year = new Date().getFullYear();
 
   return (
-    <div style={{ width: 'calc(100vw - 5px)' }} className={`fixed bottom-0 left-0 right-0 z-20 bg-skif-black/80 backdrop-blur-sm border-t border-skif-gold/30 py-3 px-4 transition-opacity duration-1000 ${className}`}>
+    <div style={{ width: 'calc(100vw - 5px)' }} className={`w-[100vw] fixed bottom-0 left-0 right-0 z-20 bg-skif-black/80 backdrop-blur-sm border-t border-skif-gold/30 py-3 px-4 transition-opacity duration-1000 ${className}`}>
       <div className="flex flex-col items-center justify-center text-center">
         {/* Внешний контейнер, отцентрированный относительно экрана */}
         <div className="w-full max-w-4xl mx-auto flex flex-col lg:flex-row lg:justify-evenly gap-4">
