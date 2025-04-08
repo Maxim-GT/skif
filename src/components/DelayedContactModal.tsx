@@ -134,24 +134,6 @@ const DelayedContactModal = () => {
               )}
             />
             
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Сообщение</FormLabel>
-                  <FormControl>
-                    <Textarea 
-                      placeholder="Ваше сообщение или вопрос..." 
-                      className="min-h-[100px]"
-                      {...field} 
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            
             <div className="flex justify-end space-x-4 pt-4">
               <Button 
                 type="submit" 
