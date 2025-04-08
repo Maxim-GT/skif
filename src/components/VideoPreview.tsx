@@ -18,7 +18,7 @@ const VideoPreview: React.FC = () => {
         <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl mx-auto max-w-4xl">
           <iframe
             className="w-full h-full object-cover"
-            src="https://rutube.ru/play/embed/c4ec418289a825546f477bc21e51bade?wmode=transparent"
+            // src="https://rutube.ru/play/embed/c4ec418289a825546f477bc21e51bade?wmode=transparent"
             allowFullScreen
             title="RuTube Video Player"
           ></iframe>
