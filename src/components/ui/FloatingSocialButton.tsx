@@ -25,8 +25,8 @@ const FloatingSocialButton = () => {
 
   return (
     <div
-      className="fixed bottom-[3rem] left-15 z-50 flex flex-col items-center"
-      style={{ left: 'calc(100vw - 110px)' }}
+      className="fixed bottom-[3rem] lg:bottom-20 left-15 z-50 flex flex-col items-center"
+      style={{ left: 'calc(100vw - 90px)' }}
     >
       <AnimatePresence>
         {isOpen && (
