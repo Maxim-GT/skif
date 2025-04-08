@@ -171,20 +171,6 @@
     mix-blend-mode: screen;
     filter: brightness(1.5);
   }
-  
-  .laser-dot {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    background-color: #ea384c;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    box-shadow: 0 0 5px #ea384c, 0 0 10px #ea384c, 0 0 15px rgba(234, 56, 76, 0.5);
-    transform: translate(-50%, -50%);
-    mix-blend-mode: screen;
-    filter: brightness(1.5);
-  }
 
   .no-custom-cursor {
     cursor: pointer;
@@ -279,8 +265,7 @@
   }
 }
 
-@media (hover: none) and (pointer: coarse) {
-  .laser-dot {
-    display: none;
-  }
+/* Скрытие лазерной точки, если в body добавлен класс .touch-device */
+.touch-device .laser-dot {
+  display: none;
 }
