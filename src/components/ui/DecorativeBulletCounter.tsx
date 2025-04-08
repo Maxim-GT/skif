@@ -18,13 +18,13 @@ const DecorativeBulletCounter: React.FC<DecorativeBulletCounterProps> = ({
   const year = new Date().getFullYear();
 
   return (
-    <div style={{ width: 'calc(100vw - 5px)' }} className={`w-[100vw] fixed bottom-0 left-0 right-0 z-20 bg-skif-black/80 backdrop-blur-sm border-t border-skif-gold/30 py-3 px-4 transition-opacity duration-1000 ${className}`}>
+    <div className={`w-[100vw] lg:w-[calc(100vw - 5px)] fixed bottom-0 left-0 right-0 z-20 bg-skif-black/80 backdrop-blur-sm border-t border-skif-gold/30 py-3 px-4 transition-opacity duration-1000 ${className}`}>
       <div className="flex flex-col items-center justify-center text-center">
         {/* Внешний контейнер, отцентрированный относительно экрана */}
         <div className="w-full max-w-4xl mx-auto flex flex-col lg:flex-row lg:justify-evenly gap-4">
           
           {/* Всего выстрелов */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-0 lg:gap-3">
             <div className="text-skif-gold font-medium text-sm lg:text-lg whitespace-nowrap">
               ВСЕГО ВЫСТРЕЛОВ:
             </div>
@@ -42,7 +42,7 @@ const DecorativeBulletCounter: React.FC<DecorativeBulletCounterProps> = ({
           </div>
           
           {/* За текущий год */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-0 lg:gap-3">
             <div className="text-skif-gold font-medium text-sm lg:text-lg whitespace-nowrap">
               ЗА {year} ГОД:
             </div>

@@ -25,7 +25,7 @@ const FloatingSocialButton = () => {
 
   return (
     <div
-      className="fixed bottom-[3rem] lg:bottom-20 left-15 z-50 flex flex-col items-center"
+      className="fixed bottom-[3rem] lg:bottom-20 left-calc z-50 flex flex-col items-center"
       style={{ left: 'calc(100vw - 90px)' }}
     >
       <AnimatePresence>
@@ -86,7 +86,7 @@ const FloatingSocialButton = () => {
             : 'bg-skif-gold hover:bg-skif-darkGold'
         } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'}`}
         aria-label={isOpen ? 'Close social menu' : 'Open social menu'}
-        style={{ left: 'calc(100vw - 100px)' }}
+
       >
         {isOpen ? <X size={24} /> : <Phone size={24} />}
       </motion.button>
