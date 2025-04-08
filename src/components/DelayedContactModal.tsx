@@ -82,7 +82,7 @@ const DelayedContactModal = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="ml-auto mr-auto w-[90%] lg:w-[35rem] h-[70%] rounded-lg">
+      <DialogContent className="ml-auto mr-auto w-[90%] lg:w-[35rem] h-auto rounded-lg">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold">Для вас скидка</DialogTitle>
           <DialogDescription>
