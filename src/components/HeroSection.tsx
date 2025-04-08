@@ -137,14 +137,13 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div
-        style={{ animation: 'bounce 0.8s infinite ease-in-out' }}
-        className={`flex absolute transform-translate-x-1/2 cursor-pointer transition-opacity duration-1000 ease-out
-                    will-change-opacity
-                    bottom-[1rem] lg:bottom-[2rem] ${isLoaded ? 'opacity-100' : 'opacity-0'} no-custom-cursor`}
+      <div 
+        className={` bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer animate-bounce transition-all duration-1000 delay-700 ${
+          isLoaded ? 'opacity-100' : 'opacity-0'
+        }`}
         onClick={scrollToAbout}
       >
-        <ArrowDown className="text-white h-[3rem] lg:h-24 w-10" />
+        <ArrowDown className="text-white h-10 w-10" />
       </div>
     </section>
   );
