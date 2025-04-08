@@ -215,7 +215,7 @@ const ServicesSection = () => {
               <div className="p-8">
                 <div className="mb-4">
                   <div className="flex flex-col">
-                    <h3 className="text-lg font-semibold group-hover:text-skif-gold transition-colors line-clamp-4 min-h-[3.5rem]">
+                    <h3 className="text-lg font-semibold group-hover:text-skif-gold transition-colors line-clamp-5 min-h-[3.5rem]">
                       {service.title}
                     </h3>
                     <div className="text-skif-gold font-semibold mt-2">{service.price}</div>
