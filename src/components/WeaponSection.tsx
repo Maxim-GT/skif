@@ -119,7 +119,7 @@ const WeaponsSection = () => {
                   {weapon.shortDescription}
                 </p>
                 <Button 
-                  className="w-full mx-auto bg-skif-black hover:g-skif-gold text-white transition-colors duration-300"
+                  className="w-full mx-auto bg-skif-black hover:g-skif-gold text-white transition-colors duration-300 whitespace-normal"
                   onClick={() => handleOpenDialog(weapon)}
                 >
                   Хочу попробовать

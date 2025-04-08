@@ -16,17 +16,17 @@ const VideoPreview: React.FC = () => {
         </div>
         
         <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl mx-auto max-w-4xl">
-          <iframe
+          {/* <iframe
             className="w-full h-full object-cover"
-            // src="https://rutube.ru/play/embed/c4ec418289a825546f477bc21e51bade?wmode=transparent"
+            src="https://rutube.ru/play/embed/c4ec418289a825546f477bc21e51bade?wmode=transparent"
             allowFullScreen
             title="RuTube Video Player"
-          ></iframe>
-          {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-            <p className="text-white text-lg font-semibold">
+          ></iframe> */}
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+            <p className="text-white text-lg font-semibold text-sm text-right">
               Познакомьтесь с нашим современным стрелковым комплексом
             </p>
-          </div> */}
+          </div>
         </div>
       </div>
     </section>

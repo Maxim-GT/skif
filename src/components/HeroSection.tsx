@@ -98,7 +98,7 @@ const HeroSection = () => {
             className="w-[5rem] lg:w-[12rem] sm:mb-5 mb-0"
             onLoad={handleImageLoad} // Обработчик загрузки изображения
           />
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-0 lg:mb-6 tracking-tight leading-tight">
             Спортивный клуб{" "}
             <span className="relative shimmer-container inline-block">
               <span className="gold-text-gradient text-mask">СКИФ</span>
@@ -126,8 +126,9 @@ const HeroSection = () => {
       </div>
       
       {/* Индикатор прокрутки вниз */}
-      <div 
-        className={`flex absolute transform-translate-x-1/2 cursor-pointer animate-bounce transition-all duration-2500 delay-600 bottom-[1rem] lg:bottom-[2rem] ${imageLoaded ? 'opacity-100' : 'opacity-0'} no-custom-cursor`}
+      <div
+        style={{ animation: 'bounce 0.8s infinite ease-in-out' }}
+        className={`flex absolute transform-translate-x-1/2 cursor-pointer animate-bounce-fast transition-all duration-2500 delay-600 bottom-[1rem] lg:bottom-[2rem] ${imageLoaded ? 'opacity-100' : 'opacity-0'} no-custom-cursor`}
         onClick={scrollToAbout}
       >
         <ArrowDown className="text-white h-[3rem] lg:h-24 w-10" />
