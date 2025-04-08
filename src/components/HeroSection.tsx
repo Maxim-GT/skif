@@ -97,7 +97,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 text-center z-10 mb-16">
         <div
           className={`flex flex-col items-center gap-3 transition-all duration-1000 ease-out
-                      will-change-opacity will-change-transform
+                      will-change-opacity will-change-transform mt-[7vh]
                       ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <img
@@ -115,7 +115,7 @@ const HeroSection = () => {
           </h1>
 
           <p
-            className={`text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 transition-all duration-1000 ease-out
+            className={`text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-4 lg:mb-8 transition-all duration-1000 ease-out
                         will-change-opacity will-change-transform
                         ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           >
@@ -138,7 +138,7 @@ const HeroSection = () => {
       </div>
 
       <div 
-        className={` bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer animate-bounce transition-all duration-1000 delay-700 ${
+        className={`transform -translate-x-1/2 cursor-pointer animate-bounce transition-all duration-1000 delay-700 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
         }`}
         onClick={scrollToAbout}
