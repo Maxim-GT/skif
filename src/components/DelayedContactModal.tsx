@@ -46,7 +46,7 @@ const DelayedContactModal = () => {
         setIsOpen(true);
         // Помечаем в sessionStorage, что модальное окно было показано
         sessionStorage.setItem(MODAL_SHOWN_KEY, 'true');
-      }, 2 * 60 * 1000);
+      }, 5 * 1000);
       
       return () => clearTimeout(timer);
     }
@@ -82,7 +82,7 @@ const DelayedContactModal = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="ml-auto mr-auto w-[21rem] lg:w-[35rem] rounded-lg">
+      <DialogContent className="ml-auto mr-auto w-[90%] lg:w-[35rem] h-[70%] rounded-lg">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold">Для вас скидка</DialogTitle>
           <DialogDescription>

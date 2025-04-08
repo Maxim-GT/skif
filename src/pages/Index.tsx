@@ -66,7 +66,6 @@ const Index = () => {
       <FAQSection />
       <ContactForm />
       <Footer />
-      <ScrollToTop />
       <SocialProofNotification />
       <FloatingSocialButton />
       <DelayedContactModal />

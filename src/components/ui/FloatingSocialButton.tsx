@@ -25,7 +25,7 @@ const FloatingSocialButton = () => {
 
   return (
     <div
-      className="fixed bottom-[7rem] left-15 z-50 flex flex-col items-center"
+      className="fixed bottom-[3rem] left-15 z-50 flex flex-col items-center"
       style={{ left: 'calc(100vw - 110px)' }}
     >
       <AnimatePresence>
@@ -80,7 +80,7 @@ const FloatingSocialButton = () => {
       {/* Main toggle button с анимацией появления по скроллу */}
       <motion.button
         onClick={toggleOpen}
-        className={`flex h-[4rem] w-[4rem] items-center justify-center rounded-full shadow-lg transition-all duration-300 text-white ${
+        className={`flex h-[3rem] w-[3rem] lg:h-[4rem] lg:w-[4rem] items-center justify-center rounded-full shadow-lg transition-all duration-300 text-white ${
           isOpen
             ? 'bg-skif-gold hover:bg-skif-darkGold'
             : 'bg-skif-gold hover:bg-skif-darkGold'

@@ -25,7 +25,7 @@ const DecorativeBulletCounter: React.FC<DecorativeBulletCounterProps> = ({
           
           {/* Всего выстрелов */}
           <div className="flex items-center gap-3">
-            <div className="text-skif-gold font-medium text-base lg:text-lg whitespace-nowrap">
+            <div className="text-skif-gold font-medium text-sm lg:text-lg whitespace-nowrap">
               ВСЕГО ВЫСТРЕЛОВ:
             </div>
             {/* Группа цифр, выровненная по правому краю */}
@@ -35,7 +35,7 @@ const DecorativeBulletCounter: React.FC<DecorativeBulletCounterProps> = ({
                   key={`total-${index}`}
                   className="mx-[1px] bg-skif-charcoal/80 rounded-md w-6 h-8 flex items-center justify-center"
                 >
-                  <span className="text-skif-gold font-bold text-base lg:text-lg">{digit}</span>
+                  <span className="text-skif-gold font-bold text-sm lg:text-lg">{digit}</span>
                 </div>
               ))}
             </div>
@@ -43,7 +43,7 @@ const DecorativeBulletCounter: React.FC<DecorativeBulletCounterProps> = ({
           
           {/* За текущий год */}
           <div className="flex items-center gap-3">
-            <div className="text-skif-gold font-medium text-base lg:text-lg whitespace-nowrap">
+            <div className="text-skif-gold font-medium text-sm lg:text-lg whitespace-nowrap">
               ЗА {year} ГОД:
             </div>
             {/* Группа цифр, выровненная по правому краю */}
@@ -53,7 +53,7 @@ const DecorativeBulletCounter: React.FC<DecorativeBulletCounterProps> = ({
                   key={`yearly-${index}`}
                   className="mx-[1px] bg-skif-charcoal/80 rounded-md w-6 h-8 flex items-center justify-center"
                 >
-                  <span className="text-skif-gold font-bold text-base lg:text-lg">{digit}</span>
+                  <span className="text-skif-gold font-bold text-sm lg:text-lg">{digit}</span>
                 </div>
               ))}
             </div>
