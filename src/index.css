@@ -278,3 +278,9 @@
     opacity: 0;
   }
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .laser-dot {
+    display: none;
+  }
+}

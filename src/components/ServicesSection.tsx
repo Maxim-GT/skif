@@ -54,7 +54,7 @@ const MobileSlider = ({ offers }) => {
       <div
         className="md:hidden overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4"
         ref={containerRef}
-        style={{ touchAction: 'pan-x', WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        style={{ touchAction: 'auto', WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         <div className="flex gap-4 px-4">
           {offers.map((offer, index) => (
