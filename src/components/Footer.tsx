@@ -8,8 +8,7 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-skif-black text-white pt-16 pb-8">
-      <div className="absolute inset-0 mongolian-pattern-border opacity-10"></div>
-      <div className="container mx-auto px-4">
+      <div className="relative container mx-auto px-4 z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <div className="flex items-center mb-6">
@@ -99,6 +98,7 @@ const Footer = () => {
           <p>© {currentYear} Стрелковый клуб СКИФ. Все права защищены.</p>
         </div>
       </div>
+      <div className="absolute inset-0 mongolian-pattern-border opacity-10 z-0"></div>
     </footer>
   );
 };
